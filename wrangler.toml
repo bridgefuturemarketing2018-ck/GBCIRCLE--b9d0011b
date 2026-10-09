@@ -1,0 +1,22 @@
+name = "gbcircle-compliance"
+main = "src/workers/index.js"
+compatibility_date = "2024-09-19"
+
+[[durable_objects.bindings]]
+name = "STARTER_OBJECT"
+class_name = "StarterDurable"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["StarterDurable"]
+
+routes = [
+  { pattern = "https://gbcircle.com/*", zone_name = "gbcircle.com" },
+  { pattern = "https://bridgefutureglobal.com/*", zone_name = "bridgefutureglobal.com" },
+  { pattern = "https://globalbusinesscamerainsight.com/*", zone_name = "globalbusinesscamerainsight.com" }
+]
+
+[vars]
+ENVIRONMENT = "production"
+APP_NAME = "gbcircle-compliance"
+COMPLIANCE_DOMAINS = "gbcircle.com,bridgefutureglobal.com,globalbusinesscamerainsight.com"
